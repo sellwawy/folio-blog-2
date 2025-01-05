@@ -3,19 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+   /* fluid font size and Spacing 
+   https://utopia.fyi/clamp/calculator/?a=320,1200 */
+
+   /* Font size */
+   --fluid-12-14: clamp(0.75rem, 0.7045rem + 0.2273vi, 0.875rem);
+   --fluid-14-15: clamp(0.875rem, 0.8523rem + 0.1136vi, 0.9375rem);
+   --fluid-14-16: clamp(0.875rem, 0.8295rem + 0.2273vi, 1rem);
+   --fluid-16-18: clamp(1rem, 0.9545rem + 0.2273vi, 1.125rem);
+   --fluid-15-17: clamp(0.9375rem, 0.892rem + 0.2273vi, 1.0625rem);
+   --fluid-17-20: clamp(1.0625rem, 0.9943rem + 0.3409vi, 1.25rem);
+   --fluid-19-25: clamp(1.1875rem, 1.0511rem + 0.6818vi, 1.5625rem);
+   --fluid-20-30: clamp(1.25rem, 1.0227rem + 1.1364vi, 1.875rem);
+   --fluid-25-40: clamp(1.5625rem, 1.2216rem + 1.7045vi, 2.5rem);
+
+   /* Spacing */
+   --fluid-2-4: clamp(0.125rem, 0.0795rem + 0.2273vi, 0.25rem);
+   --fluid-5-7: clamp(0.3125rem, 0.267rem + 0.2273vi, 0.4375rem);
+   --fluid-7-10: clamp(0.4375rem, 0.3693rem + 0.3409vi, 0.625rem);
+   --fluid-10-12: clamp(0.625rem, 0.5795rem + 0.2273vi, 0.75rem);
+   --fluid-13-16: clamp(0.8125rem, 0.7443rem + 0.3409vi, 1rem);
+   --fluid-8-17: clamp(0.5rem, 0.3043rem + 0.9783vi, 1.0625rem);
+   --fluid-12-19: clamp(0.75rem, 0.5978rem + 0.7609vi, 1.1875rem);
+   --fluid-14-23: clamp(0.875rem, 0.6793rem + 0.9783vi, 1.4375rem);
+   --fluid-13-25: clamp(0.8125rem, 0.5398rem + 1.3636vi, 1.5625rem);
+   --fluid-20-32: clamp(1.25rem, 0.9773rem + 1.3636vi, 2rem);
+   --fluid-28-42: clamp(1.75rem, 1.4318rem + 1.5909vi, 2.625rem);
+   --fluid-68-78: clamp(4.25rem, 4.0648rem + 0.9259vw, 4.875rem);
+   --fluid-130-150: clamp(8.125rem, 7.6705rem + 2.2727vi, 9.375rem);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+   .wrapper {
+      /* md:max-lg:container */
+      @apply mx-auto w-full max-w-screen-xl px-4 md:px-8;
+   }
 }
